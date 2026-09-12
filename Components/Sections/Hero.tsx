@@ -1,8 +1,10 @@
 "use client";
 
-import { useMemo } from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { ArrowRight, GithubIcon, Linkedin, Send } from "lucide-react";
+import Button from "../UI/Button";
+import AnimatedBorderButton from "../UI/AnimatedBorderButton";
 
 interface Dot {
   id: number;
@@ -88,6 +90,32 @@ export default function Hero(){
                                 apps that users like.
                             </p>
                         </div>
+
+                        {/* CTAs */}
+                        <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                            <Button size="lg">
+                                Contact me
+                                <ArrowRight className="w-5 h-5"/>
+                            </Button>
+                            <AnimatedBorderButton/>
+                        </div>
+                        {/* social links */}
+                        {/* <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-muted-foreground">Follow me:</span>
+                            {[
+                                {icon:Github, href:"#"},
+                                {icon:Linkedin, href:"#"},
+                                {icon:Send, href:"#"},
+                            ].map((social, idx)=>(
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                                >
+                                    {<social.icon className="w-5 h-5"/>}
+                                </a>
+                            ))}
+                        </div> */}
                     </div>
                     {/* Right column - Profile Image */}
                 </div>
