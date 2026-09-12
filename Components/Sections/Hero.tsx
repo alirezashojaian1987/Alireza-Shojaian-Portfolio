@@ -1,8 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
+import Button from "../UI/Button";
+import AnimatedBorderButton from "../UI/AnimatedBorderButton";
 
 interface Dot {
   id: number;
@@ -87,6 +91,33 @@ export default function Hero(){
                                 React, Next.Js and TypeScript. I build scalable, performant web
                                 apps that users like.
                             </p>
+                        </div>
+
+                        {/* CTAs */}
+                        <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+                            <Button size="lg">
+                                Contact me
+                                <ArrowRight className="w-5 h-5"/>
+                            </Button>
+                            <AnimatedBorderButton/>
+                        </div>
+                        {/* social links */}
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                            <span className="text-sm text-muted-foreground">Follow me:</span>
+                            {[
+                                {icon:FaGithub, href:"https://github.com/alirezashojaian1987"},
+                                {icon:FaLinkedin, href:"https://www.linkedin.com/in/alireza-shojaian83/"},
+                                {icon:FaTelegramPlane, href:"https://t.me/Alirezash1730"},
+                            ].map((social, idx)=>(
+                                <Link
+                                    key={idx}
+                                    href={social.href}
+                                    target="blank"
+                                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                                >
+                                    {<social.icon className="w-5 h-5"/>}
+                                </Link>
+                            ))}
                         </div>
                     </div>
                     {/* Right column - Profile Image */}
