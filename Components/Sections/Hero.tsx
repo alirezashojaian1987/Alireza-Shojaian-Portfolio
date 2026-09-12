@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight, GithubIcon, Linkedin, Send } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 import Button from "../UI/Button";
 import AnimatedBorderButton from "../UI/AnimatedBorderButton";
 
@@ -100,22 +102,23 @@ export default function Hero(){
                             <AnimatedBorderButton/>
                         </div>
                         {/* social links */}
-                        {/* <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                        <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Follow me:</span>
                             {[
-                                {icon:Github, href:"#"},
-                                {icon:Linkedin, href:"#"},
-                                {icon:Send, href:"#"},
+                                {icon:FaGithub, href:"https://github.com/alirezashojaian1987"},
+                                {icon:FaLinkedin, href:"https://www.linkedin.com/in/alireza-shojaian83/"},
+                                {icon:FaTelegramPlane, href:"https://t.me/Alirezash1730"},
                             ].map((social, idx)=>(
-                                <a
+                                <Link
                                     key={idx}
                                     href={social.href}
+                                    target="blank"
                                     className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                                 >
                                     {<social.icon className="w-5 h-5"/>}
-                                </a>
+                                </Link>
                             ))}
-                        </div> */}
+                        </div>
                     </div>
                     {/* Right column - Profile Image */}
                 </div>
