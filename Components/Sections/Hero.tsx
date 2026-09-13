@@ -121,6 +121,25 @@ export default function Hero(){
                         </div>
                     </div>
                     {/* Right column - Profile Image */}
+                    <div className="relative animate-fade-in animation-delay-300">
+                        {/* Profile image */}
+                        <div className="relative max-w-md mx-auto">
+                            <div className="absolute inset-0 rounded-3xl bg-linear-to-br
+                                from-primary/30 via-transparent
+                                to-primary/10 blur-2xl animate-pulse
+                            "/>
+
+                            <div className="relative glass rounded-3xl p-2 glow-border">
+                                <Image
+                                    src="/personel_Pic.jpg"
+                                    alt="Alireza Shojaian"
+                                    width={500}
+                                    height={625}
+                                    className="w-full aspect-4/5 object-cover rounded-2xl"
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
