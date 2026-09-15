@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 import Button from "../UI/Button";
 import AnimatedBorderButton from "../UI/AnimatedBorderButton";
@@ -15,6 +15,13 @@ interface Dot {
   duration: string;
   delay: string;
 }
+
+const skills=[
+    "NextJs", "ReactJs", "TypeScript",
+    "JavaScript", "Git", "Scss module",
+    "Tailwind css", "HTML", "CSS", "MySQL",
+    "Python", "C++"
+];
 
 export default function Hero(){
     const [dots, setDots] = useState<Dot[]>([]);
@@ -154,6 +161,32 @@ export default function Hero(){
                         </div>
                     </div>
                 </div>
+
+                {/* Skills section */}
+                <div className="mt-20 animate-fade-in animation-delay-600">
+                    <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
+                    <div className="relative overflow-hidden">
+                        <div className="flex animate-marquee">
+                            {[...skills, ...skills].map((skill, idx)=>(
+                                <div key={idx} className="shrink-0 px-8 py-4">
+                                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                                        {skill}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+                <Link
+                    href="#about"
+                    className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+                >
+                    <span className="text-xs uppercase tracking-wider">Scroll</span>
+                    <ChevronDown className="w-6 h-6 animate-bounce"/>
+                </Link>
             </div>
         </section>
     )
