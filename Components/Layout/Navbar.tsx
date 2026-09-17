@@ -69,12 +69,13 @@ export default function Navbar(){
                                 className="text-lg text-muted-foreground hover:text-foreground py-2 "
                                 key={index}
                                 href={link.href}
+                                onClick={()=>setIsMobileMenuOpen(false)}
                             >
                                 {link.label}
                             </Link>
                         ))}
 
-                        <Button>Contact me</Button>
+                        <Button onClick={()=>setIsMobileMenuOpen(false)}>Contact me</Button>
                     </div>
                 </div>
             )}
