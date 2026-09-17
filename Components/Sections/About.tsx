@@ -38,16 +38,16 @@ export default function About(){
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-                            Building the future,
+                            Building with purpose,
                             <span className="font-serif italic font-normal text-white">
                                 {' '}
-                                One component at a time.
+                                learning with every project.
                             </span>
                         </h2>
 
                         <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
                             <p>
-                                My interest in web development started with understanding how websites work behind the scenes and gradually
+                                My interest in web development started with wanting to understand how websites work behind the scenes and gradually
                                 grew into a focus on frontend development. I enjoy taking an idea and turning it into
                                 a responsive, structured, and interactive interface.
                             </p>
@@ -61,11 +61,11 @@ export default function About(){
 
                         <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
                             <p className="text-lg font-medium italic text-foreground">
-                                &quot;My main focus is modern frontend development with React, Next.js, and
+                                My main focus is modern frontend development with React, Next.js, and
                                 TypeScript. I enjoy building responsive web applications, creating
                                 reusable components, and continuously improving the way I build.
                                 I&apos;m also expanding my knowledge of backend technologies with the goal
-                                of becoming a full-stack web developer&quot;
+                                of becoming a full-stack web developer
                             </p>
                         </div>
                     </div>
