@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 import Button from "../UI/Button";
 import AnimatedBorderButton from "../UI/AnimatedBorderButton";
@@ -106,7 +106,10 @@ export default function Hero(){
                                 Contact me
                                 <ArrowRight className="w-5 h-5"/>
                             </Button>
-                            <AnimatedBorderButton/>
+                            <AnimatedBorderButton>
+                                <Download className="w-5 h-5" />
+                                Download CV
+                            </AnimatedBorderButton>
                         </div>
                         {/* social links */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">

@@ -1,8 +1,12 @@
 "use client";
 
-import { Download } from "lucide-react";
+import type { ReactNode } from "react";
 
-export default function AnimatedBorderButton(){
+interface AnimatedBorderButtonProps {
+    children: ReactNode;
+}
+
+export default function AnimatedBorderButton({children}:AnimatedBorderButtonProps){
     return(
         <button
             className="
@@ -36,8 +40,7 @@ export default function AnimatedBorderButton(){
             </svg>
 
             <span className="relative z-10 flex items-center justify-center gap-2">
-                <Download className="w-5 h-5" />
-                Download CV
+                {children}
             </span>
         </button>
     );
