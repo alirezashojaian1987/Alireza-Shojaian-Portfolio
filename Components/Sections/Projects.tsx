@@ -16,7 +16,7 @@ const projects=[
             "Tailwind",
             "Django",
         ],
-        link:"#",
+        link:"https://nardban.net/",
         github:"#",
     },
 ];
