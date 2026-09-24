@@ -1,28 +1,28 @@
 const experiences=[
     {
-        period:"2025-2026",
-        role:"Data science",
-        company:"Msa",
-        description:"Data scientist at Msa labs",
-        technologies:["Python", "Matlab"],
+        period:"2026 - present",
+        role:"Web Development",
+        company:"Personal projects",
+        description:"Building responsive web applications and interfaces while strengthening my skills in React, Next.js, TypeScript, and modern frontend development. Also learning NodeJs and Back-end fundamentals as well.",
+        technologies:["React", "NextJs", "TypeScript", "Tailwind", "NodeJs"],
         current:true,
     },
 
     {
-        period:"2024-2025",
-        role:"Back-end developer",
-        company:"Part",
-        description:"Back-end developing in Part institute. Using django",
-        technologies:["Python", "Django"],
+        period:"2025-2026",
+        role:"Frontend Development",
+        company:"Nardban education platform",
+        description:"Worked as a Front-end developer in a team project, building and improving user interfaces for an educational platform and collaborating with the backend side.",
+        technologies:["React", "TypeScript", "SCSS module", "REST API"],
         current:false,
     },
 
     {
-        period:"2023-2024",
+        period:"2025-2026",
         role:"Front-end developer",
-        company:"Part",
-        description:"Front-end developer and designer in Part institute, using React and NextJs libraries",
-        technologies:["React", "NextJs", "Tailwind"],
+        company:"Daneshkar",
+        description:"Started learning Front-end fundamentals with the help of the Daneshkar's academy course which was Front + React. Helping me learn from basics to developing modern web apps and projects.",
+        technologies:["HTML", "CSS", "JavaScript", "React", "SCSS module", "TypeScript", "NextJs"],
         current:false,
     },
 ]
@@ -38,7 +38,7 @@ export default function Experience(){
                 {/* Section Header */}
                 <div className="max-w-3xl mb-16">
                     <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
-                        Career Journey
+                        Development Journey
                     </span>
 
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
@@ -46,7 +46,8 @@ export default function Experience(){
                     </h2>
 
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        A timeline of my professional growth, from curious beginner to an experienced developer working with teams and building websites.
+                        A timeline of my journey in web development, from learning the
+                        fundamentals to building real-time projects.
                     </p>
                 </div>
 
