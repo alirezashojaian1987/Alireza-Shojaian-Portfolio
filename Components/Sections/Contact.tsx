@@ -1,12 +1,15 @@
+"use client";
+
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import Button from "../UI/Button";
+import { useState } from "react";
 
 const contactInfo=[
     {
         icon:Mail,
         label:"Email",
-        value:"alirezashojaian@gmail.com",
-        href:"mailto:alirezashojaian@gmail.com",
+        value:"ash19878304@gmail.com",
+        href:"mailto:ash19878304@gmail.com",
     },
 
     {
@@ -25,6 +28,16 @@ const contactInfo=[
 ];
 
 export default function Contact(){
+    const [formData, setFormData]=useState({
+        name:"",
+        email:"",
+        message:"",
+    });
+
+    const handleSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
+        e.preventDefault();
+    }
+
     return(
         <section id="contact" className="py-32 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full">
@@ -54,7 +67,7 @@ export default function Contact(){
 
                 <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                      <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                                 <input
@@ -63,6 +76,8 @@ export default function Contact(){
                                     required
                                     placeholder="Your name:..."
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                    value={formData.name}
+                                    onChange={(e) => setFormData({...formData, name:e.target.value})}
                                 />
                             </div>
 
@@ -74,6 +89,8 @@ export default function Contact(){
                                     required
                                     placeholder="your@email.com"
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({...formData, email:e.target.value})}
                                 />
                             </div>
 
@@ -85,6 +102,8 @@ export default function Contact(){
                                     required
                                     placeholder="Your message:..."
                                     className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({...formData, message:e.target.value})}
                                 />
                             </div>
 
