@@ -1,8 +1,9 @@
 "use client";
 
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { AlertCircle, CheckCircle, Mail, MapPin, Phone, Send } from "lucide-react"
 import Button from "../UI/Button";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const contactInfo=[
     {
@@ -34,8 +35,56 @@ export default function Contact(){
         message:"",
     });
 
+    const [isLoading, setIsLoading]=useState(false);
+
+    type SubmitStatus={
+        type: "success" | "error" | null;
+        message: string;
+    };
+
+    const [submitStatus, setSubmitStatus]=useState<SubmitStatus>({
+        type:null,
+        message:"",
+    })
+
     const handleSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
+        setIsLoading(true);
+        setSubmitStatus({type:null, message:""});
+
+        try{
+            const serviceId=process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+            const templateId=process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+            const publicKey=process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+            if(!serviceId || !templateId || !publicKey){
+                throw new Error("EmailJs configuration is missing");
+            }
+
+            await emailjs.send(serviceId, templateId, {
+                name:formData.name,
+                email:formData.email,
+                message:formData.message,
+            }, publicKey);
+
+            setSubmitStatus({
+                type:"success",
+                message:"Message sent successfully! I'll get back to you soon."
+            });
+
+            setFormData({name:"", email:"", message:""});
+        } catch(err) {
+            console.log("EmailJS error:", err);
+
+            setSubmitStatus({
+                type: "error",
+                message: err instanceof Error
+                    ? err.message
+                    : "Failed to send message. Please try again later.",
+            })
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return(
@@ -107,10 +156,36 @@ export default function Contact(){
                                 />
                             </div>
 
-                            <Button className="w-full" type="submit" size="lg">
-                                Send message
-                                <Send/>
+                            <Button className="w-full" type="submit" size="lg" disabled={isLoading}>
+                                {isLoading ? (
+                                    <>
+                                        sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        Send message
+                                        <Send className="w-5 h-5"/>
+                                    </>
+                                )}
                             </Button>
+
+                            {submitStatus.type && (
+                                <div
+                                className={`flex items-center gap-3
+                                    p-4 rounded-xl ${
+                                    submitStatus.type === "success"
+                                        ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                                        : "bg-red-500/10 border border-red-500/20 text-red-400"
+                                    }`}
+                                >
+                                {submitStatus.type === "success" ? (
+                                    <CheckCircle className="w-5 h-5 shrink-0" />
+                                ) : (
+                                    <AlertCircle className="w-5 h-5 shrink-0" />
+                                )}
+                                <p className="text-sm">{submitStatus.message}</p>
+                                </div>
+                            )}
                         </form>
                      </div>
                 </div>
