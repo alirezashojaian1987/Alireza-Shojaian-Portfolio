@@ -51,7 +51,9 @@ export default function Navbar(){
 
                 {/* CTA Button */}
                 <div className="hidden md:block">
-                    <Button size="sm">Contact me</Button>
+                    <Link href="#contact">
+                        <Button size="sm">Contact me</Button>
+                    </Link>
                 </div>
 
                 {/* Mobile menu Button */}
@@ -75,7 +77,12 @@ export default function Navbar(){
                             </Link>
                         ))}
 
-                        <Button onClick={()=>setIsMobileMenuOpen(false)}>Contact me</Button>
+                        <Link
+                            href="#contact"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            <Button>Contact me</Button>
+                        </Link>
                     </div>
                 </div>
             )}

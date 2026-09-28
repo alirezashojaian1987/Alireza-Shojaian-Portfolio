@@ -3,9 +3,11 @@ interface ButtonProps{
     size?:"sm" | "default" | "lg";
     children:React.ReactNode;
     onClick?: () => void;
+    type?: "button" | "submit" | "reset";
+    disabled?:boolean;
 }
 
-export default function Button({ className="", size="default", children, onClick}:ButtonProps){
+export default function Button({ className="", size="default", children, onClick, type="button", disabled=false}:ButtonProps){
     const baseClasses="relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
 
     const sizeClasses={
@@ -17,7 +19,7 @@ export default function Button({ className="", size="default", children, onClick
     const classes=`${baseClasses} ${sizeClasses[size]} ${className}`;
 
     return(
-        <button className={classes} onClick={onClick}>
+        <button className={classes} onClick={onClick} type={type} disabled={disabled}>
             <span className="relative flex items-center justify-center gap-2">{children}</span>
         </button>
     );
