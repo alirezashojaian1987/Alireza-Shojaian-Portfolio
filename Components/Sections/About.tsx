@@ -41,7 +41,7 @@ export default function About(){
                             Building with purpose,
                             <span className="font-serif italic font-normal text-white">
                                 {' '}
-                                learning with every project.
+                                growing with every project.
                             </span>
                         </h2>
 
@@ -53,9 +53,8 @@ export default function About(){
                             </p>
 
                             <p>
-                                I primarily work with React, Next.js, and TypeScript to build responsive and interactive web applications.
-                                I&apos;m interested in writing clean, maintainable code while also paying attention
-                                to design, performance, and the overall user experience.
+                                My work focuses on React, NextJs, and TypeScript, with an
+                                emphasis on clean, maintainable code.
                             </p>
                         </div>
 

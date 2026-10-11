@@ -148,8 +148,14 @@ export default function Projects(){
                 {/* View all CTA */}
                 <div className="text-center mt-12 animate-fade-in animation-delay-500">
                     <AnimatedBorderButton>
-                        View all projects
-                        <ArrowUpRight className="w-5 h-5"/>
+                        <Link
+                            className="flex items-center gap-2"
+                            href="https://github.com/alirezashojaian1987"
+                            target="_blank"
+                        >
+                            View all projects
+                            <ArrowUpRight className="w-5 h-5"/>
+                        </Link>
                     </AnimatedBorderButton>
                 </div>
             </div>
