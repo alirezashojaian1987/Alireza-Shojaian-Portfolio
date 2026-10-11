@@ -19,9 +19,9 @@ const experiences=[
 
     {
         period:"2025-2026",
-        role:"Front-end developer",
+        role:"Frontend Developer",
         company:"Daneshkar",
-        description:"Started learning Front-end development through Daneshkar's Front + React course. Building a strong foundation in web technologies and progressing toward developing modern web applications and projects.",
+        description:"Started learning Frontend development through Daneshkar's Front + React course. Building a strong foundation in web technologies and progressing toward developing modern web applications and projects.",
         technologies:["HTML", "CSS", "JavaScript", "React", "SCSS module", "TypeScript", "NextJs"],
         current:false,
     },
