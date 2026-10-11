@@ -106,11 +106,20 @@ export default function Hero(){
                                 Contact me
                                 <ArrowRight className="w-5 h-5"/>
                             </Button>
+                            
                             <AnimatedBorderButton>
-                                <Download className="w-5 h-5" />
-                                Download CV
+                                <Link
+                                    href="/Alireza-Shojaian-resume"
+                                    download="Alireza-Shojaian-resume"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2"
+                                >
+                                    <Download className="w-5 h-5" />
+                                    Download CV
+                                </Link>
                             </AnimatedBorderButton>
                         </div>
+
                         {/* social links */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
                             <span className="text-sm text-muted-foreground">Follow me:</span>
@@ -141,7 +150,7 @@ export default function Hero(){
 
                             <div className="relative glass rounded-3xl p-2 glow-border">
                                 <Image
-                                    src="/personel_Pic.jpg"
+                                    src="/my_pic.png"
                                     alt="Alireza Shojaian"
                                     width={500}
                                     height={625}

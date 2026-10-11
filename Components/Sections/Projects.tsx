@@ -12,12 +12,39 @@ const projects=[
         image:"/Projects/Nardban.png",
         tags:[
             "React",
+            "TypeScript",
             "Scss",
             "Tailwind",
             "Django",
         ],
         link:"https://nardban.net/",
         github:"#",
+    },
+
+    {
+        title: "Store app",
+        description:"A simple store app using dummyjson's store api",
+        image:"/Projects/store app.png",
+        tags:[
+            "React",
+            "TypeScript",
+            "Scss",
+        ],
+        link:"https://store-app-nine-indol.vercel.app/",
+        github:"https://github.com/alirezashojaian1987/Store-app.git",
+    },
+
+    {
+        title: "Quiz app",
+        description:"A web app where you can setup your desired category for questions and test your skills",
+        image:"/Projects/quiz app.png",
+        tags:[
+            "React",
+            "TypeScript",
+            "Tailwind",
+        ],
+        link:"https://quiz-app-i3sn.vercel.app/",
+        github:"https://github.com/alirezashojaian1987/Quiz-app.git",
     },
 ];
 
