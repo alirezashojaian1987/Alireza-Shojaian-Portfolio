@@ -100,7 +100,6 @@ export default function Certificates() {
 
                         {/* Actions */}
                         <div className="flex flex-wrap gap-4 pt-2">
-
                             {/* PDF */}
                             <Link
                                 href="/Certificate of Achievement - Alireza Shojaian.pdf"
@@ -122,7 +121,6 @@ export default function Certificates() {
                                 <ExternalLink className="w-5 h-5" />
                                 View on Linkedin
                             </Link>
-
                         </div>
                     </div>
                 </div>
