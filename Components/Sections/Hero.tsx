@@ -109,7 +109,7 @@ export default function Hero(){
                             
                             <AnimatedBorderButton>
                                 <Link
-                                    href="/Alireza-Shojaian-Resume.pdf"
+                                    href="/Alireza-Shojaian-resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2"
@@ -118,17 +118,6 @@ export default function Hero(){
                                     Download CV
                                 </Link>
                             </AnimatedBorderButton>
-
-                            {/* PDF
-                            <Link
-                                href="/Certificate of Achievement - Alireza Shojaian.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/20"
-                            >
-                                <FileText className="w-5 h-5" />
-                                View Certificate
-                            </Link> */}
                         </div>
 
                         {/* social links */}
