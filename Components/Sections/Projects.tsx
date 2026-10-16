@@ -18,7 +18,7 @@ const projects=[
             "Django",
         ],
         link:"https://nardban.net/",
-        github:"#",
+        github:"https://github.com/alirezashojaian1987/SABAQ_Front.git",
     },
 
     {
