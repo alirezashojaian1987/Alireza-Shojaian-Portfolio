@@ -93,10 +93,12 @@ export default function Projects(){
                                 <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60"/>
 
                                 {/* Overlay links */}
-                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="hidden md:flex absolute inset-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <Link
                                         href={prj.link}
                                         target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`View ${prj.title} live`}
                                         className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                                     >
                                         <ArrowUpRight className="w-5 h-5"/>
@@ -105,6 +107,8 @@ export default function Projects(){
                                     <Link
                                         href={prj.link}
                                         target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`View ${prj.title} on GitHub`}
                                         className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                                     >
                                         <FaGithub className="w-5 h-5"/>
@@ -127,6 +131,33 @@ export default function Projects(){
                                 <p className="text-muted-foreground text-sm">
                                     {prj.description}
                                 </p>
+
+                                {/* Mobile project links */}
+                                <div className="flex md:hidden items-center gap-3">
+                                    <Link
+                                        href={prj.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                                            border border-border/70 text-xs font-medium text-muted-foreground
+                                            hover:text-primary hover:border-primary/50 transition-colors"
+                                    >
+                                        Live demo
+                                        <ArrowUpRight className="w-3.5 h-3.5"/>
+                                    </Link>
+
+                                    <Link
+                                        href={prj.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                                            border border-border/70 text-xs font-medium text-muted-foreground
+                                            hover:text-primary hover:border-primary/50 transition-colors"
+                                    >
+                                        Source code
+                                        <FaGithub className="w-3.5 h-3.5"/>
+                                    </Link>
+                                </div>
 
                                 <div className="flex flex-wrap gap-2">
                                     {prj.tags.map((tag, tagId)=>(
